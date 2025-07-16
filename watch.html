@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        Body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20%;
+            background-color: rgb(156, 211, 192);
+        }
+        .watch{
+            background-color: black;
+           /*  border: 5px inset yellow; */
+            padding: 10px;
+            padding-left: 70px;
+            padding-right: 70px;
+            box-shadow: 10px 10px rgb(98, 98, 67);
+            color: aliceblue;
+            border-radius: 20px;
+            font-size: 40px;
+            outline: 5px inset yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="watch">
+        <p id="clock"></p>
+    </div>
+    <script>
+     let watch = document.querySelector(".watch");
+     let clock = document.getElementById("clock");
+
+     const currentTime = () => {
+        let curTime = new Date();
+        clock.innerText = curTime.toLocaleTimeString();
+     }
+     setInterval("currentTime()", 1000);
+    </script>
+</body>
+</html>
